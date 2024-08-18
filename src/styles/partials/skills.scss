@@ -1,0 +1,30 @@
+.section.skills{
+    .col1.img{
+        img{
+            width:100%;
+        }
+        
+
+    }
+    .col1.typography{
+        padding-left: 2em;
+        .skill-item{
+            border-left: .17em solid var(--primary-color);
+            margin-bottom: .5em;
+            padding: .1em 0 .2em .5em;
+            color: var(--text-light);
+            font-weight:bold;
+            transform: translateX(100%);
+            opacity: 0;
+            animation: getAnimationDuration(.3s) slideInRight forwards;
+            @for $i from 2 through 7{
+                &:nth-child(#{$i}){
+                   animation-delay:calc(var(--animation-speed)* $i * .1s) ; 
+                }
+            }
+        }
+        .btn{
+            margin-top:1em;
+        }
+    }
+}
